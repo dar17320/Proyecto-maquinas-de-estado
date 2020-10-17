@@ -32,6 +32,7 @@ module salidas(input I1, I2, D1, D2, clk, reset, output wire Q, output wire [1:0
     	assign S3fut = (NI1 & NI2 & D1 & ND2 & Ng)|(NI1 & NI2 & D1 & ND2 & NS0 & NS1 & NS2 & S3 & NS4)|(NI1 & NI2 & D1 & ND2 & S0 & NS1 & NS2 & NS3 & NS4);
     	assign S4fut = (NI1 & NI2 & ND1 & D2 & Ng)|(NI1 & NI2 & ND1 & D2 & NS0 & NS1 & NS2 & NS3 & S4)|(NI1 & NI2 & ND1 & D2 & S0 & NS1 & NS2 & NS3 & NS4);
 
+//Flipflops de cada uno de los estados
     	FFD U3(clk, reset, S0fut, S0);
     	FFD U4(clk, reset, S1fut, S1);
     	FFD U5(clk, reset, S2fut, S2);
